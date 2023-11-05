@@ -14,3 +14,25 @@ Ejemplo: "Hello world"
 }
 Nota: siempre letras minúsculas y sin tildes (para simplificar)
 */
+
+function contarLetras(cadena) {
+    const contador = {};
+  
+    for (let i = 0; i < cadena.length; i++) {
+      const letra = cadena[i].toLowerCase();
+      if (letra.match(/[a-z]/)) {
+        if (contador[letra]) {
+          contador[letra] += 1;
+        } else {
+          contador[letra] = 1;
+        }
+      }
+    }
+  
+    return contador;
+  }
+  
+
+  const texto = "Hello world";
+  const resultado = contarLetras(texto);
+  console.log(resultado);
